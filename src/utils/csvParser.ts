@@ -9,13 +9,23 @@ export interface Movie {
 
 export const parseCSV = (data: string): Movie[] => {
   const parsed = Papa.parse(data, { header: true });
-
   return parsed.data
-    .filter((row: any) => row.title && row.genres && row.overview)
-    .map((row: any, index: number) => ({
-      id: index + 1,
-      title: row.title,
-      genres: row.genres.split(' '), // split by space sesuai format csv kamu
-      overview: row.overview,
-    }));
+    .filter((row: any) => row.title && row.overview && row.genres)
+    .map((row: any, index: number) => {
+      let genreList: string[] = [];
+      try {
+        const genres = JSON.parse(row.genres.replace(/'/g, '"'));
+        genreList = genres.map((g: any) => g.name);
+      } catch (error) {
+        // Skip rows with invalid genres format
+      }
+
+      return {
+        id: index + 1,
+        title: row.title,
+        genres: genreList,
+        overview: row.overview,
+      };
+    })
+    .filter(movie => movie.genres.length > 0);
 };
