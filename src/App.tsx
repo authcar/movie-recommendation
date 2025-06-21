@@ -203,7 +203,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-blue-10">
+    <div className="min-h-screen bg-gradient-to-r from-[#FEC2E6] to-[#C6DA83]">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-blue-100 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-6 py-6">
@@ -358,15 +358,15 @@ export default function App() {
           <div className="text-center py-12">
             <div className="mb-8">
               <div className="relative inline-block">
-                <Film className="w-24 h-24 text-violet-300 mx-auto animate-bounce" />
-                <Sparkles className="w-8 h-8 text-pink-400 absolute -top-5 -right-10 animate-pulse" />
-                <Sparkles className="w-8 h-8 text-pink-400 absolute -bottom-2 -left-10 animate-pulse" />
+                <Film className="w-24 h-24 text-stone-700 mx-auto animate-bounce" />
+                <Sparkles className="w-8 h-8 text-pink-700 absolute -top-5 -right-10 animate-pulse" />
+                <Sparkles className="w-8 h-8 text-pink-600 absolute -bottom-2 -left-10 animate-pulse" />
               </div>
             </div>
             <h3 className="text-2xl font-bold text-gray-700 mb-4">
               Ready to discover amazing movies? 🍿
             </h3>
-            <p className="text-gray-500 max-w-md mx-auto">
+            <p className="text-gray-700 max-w-md mx-auto">
               Search for a movie you love or try genres like "comedy", "romance", or "adventure" to get personalized recommendations!
             </p>
           </div>
@@ -374,9 +374,9 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <div className="text-center py-8 text-gray-400">
+      <div className="text-center py-8 text-[#DC4D88] font-bold">
         <p className="flex items-center justify-center">
-          Made with <Heart className="w-4 h-4 text-pink-400 mx-1" /> by Audrey, Marco and Daniel
+          Made with <Heart className="w-4 h-4 mx-1" strokeWidth={5} /> by Audrey, Daniel and Marco
         </p>
       </div>
     </div>
